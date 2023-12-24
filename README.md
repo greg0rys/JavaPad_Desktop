@@ -1,4 +1,5 @@
-# Java Notes CLI APP
+<center> <h1> JavaPad </h1> </center>
+
 
 <table>
   <tr>
@@ -17,14 +18,5 @@
   </tr>
 </table>
 
-  Purpose
-  ==
-  <table>
-    <thead>
-      <th>first</th>
-    </thead>
-    <tr>
-      <td>f</td>
-    </tr>
-  </table>
+
   
