@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Date;
 
 public class Note {
+
     private String note_name;
     private NoteType type;
     private String note_body;
