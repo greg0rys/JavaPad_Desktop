@@ -23,6 +23,7 @@ public class StartUp {
 		out.println(WELCOME_MSG);
 
 		loadFileData();
+		menu();
 
 	}
 
@@ -30,6 +31,41 @@ public class StartUp {
 		if(!file.hasData())
 			file.createData();
 	}
+
+	private void menu()
+	{
+		boolean run = true;
+		int choice = 0;
+
+		// use do while loop so it will always loop the menu at least once
+		do {
+			out.print("Main Menu\n\t1. Open Note\n\t2. Make Note\n");
+			out.print("Enter Choice: ");
+			choice = data_in.nextInt();
+
+			if(InputValidator.getValidity()){
+				switch(choice)
+				{
+					case 0:
+						run = false;
+						break;
+					case 1:
+						out.println("We need data!");
+						out.println("******************\n");
+						break;
+				}
+
+				InputValidator.setValid(true);
+			}
+			else {
+				out.println("try again");
+
+			}
+
+
+		} while(run);
+	}
+
 
 
 }

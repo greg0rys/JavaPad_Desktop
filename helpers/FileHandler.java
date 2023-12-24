@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class FileHandler {
     private boolean file_found = findFile();
-    private static final String FILE_PATH = "./notepad/user_info.txt";
+    private static final String FILE_PATH = "./user_info.txt";
     private static File working_file = new File(FILE_PATH);
     private static FileWriter writer;
     private static Scanner data_in = new Scanner(System.in);
