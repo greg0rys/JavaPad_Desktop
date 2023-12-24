@@ -1,1 +1,3 @@
-/*/ @greg0rys
+# Make Greg the owner of all files in the repo
+#syntax is ./path @owner
+* @greg0rys
