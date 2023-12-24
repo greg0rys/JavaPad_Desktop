@@ -1,4 +1,4 @@
-package helpers;
+package src.helpers;
 import static java.lang.System.out;
 
 import java.io.IOException;
@@ -39,7 +39,7 @@ public class StartUp {
 
 		// use do while loop so it will always loop the menu at least once
 		do {
-			out.print("Main Menu\n\t1. Open Note\n\t2. Make Note\n");
+			out.print("src.Main Menu\n\t1. Open Note\n\t2. Make Note\n");
 			out.print("Enter Choice: ");
 			choice = data_in.nextInt();
 

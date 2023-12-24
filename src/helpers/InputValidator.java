@@ -1,4 +1,4 @@
-package helpers;
+package src.helpers;
 
 public class InputValidator {
     private static boolean is_valid = false;

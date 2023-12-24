@@ -1,4 +1,6 @@
-import helpers.*;
+package src;
+
+import src.helpers.*;
 
 import java.io.IOException;
 

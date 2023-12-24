@@ -1,4 +1,4 @@
-package Constants;
+package src.Constants;
 
 public enum NoteType {
     LONG,

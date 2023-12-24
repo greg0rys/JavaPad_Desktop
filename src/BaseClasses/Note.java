@@ -1,8 +1,6 @@
-package BaseClasses;
-import Constants.NoteType;
+package src.BaseClasses;
+import src.Constants.NoteType;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Date;
 
 public class Note {
 

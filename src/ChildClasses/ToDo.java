@@ -1,7 +1,7 @@
-package ChildClasses;
+package src.ChildClasses;
 
-import BaseClasses.Note;
-import Constants.NoteType;
+import src.BaseClasses.Note;
+import src.Constants.NoteType;
 
 public class ToDo extends Note {
 
