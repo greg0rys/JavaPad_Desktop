@@ -1,3 +1,7 @@
+
+/**
+ * base class for all Note Objects. This will spawn the need for subclasses
+ */
 package src.BaseClasses;
 import src.Constants.NoteType;
 import org.jetbrains.annotations.NotNull;

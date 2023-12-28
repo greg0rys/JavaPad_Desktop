@@ -66,6 +66,7 @@ public class FileHandler {
         return working_file.length() > 0;
     }
 
+    // grab some random user input and throw it into a text file for processing.
     public void createData() throws IOException {
 
         if(writer == null)
