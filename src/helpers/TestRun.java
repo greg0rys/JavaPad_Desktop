@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * Loads welcome info for the user - while also reading the stored data file
- * if the data file is not found a new one is created
+ * Runs the program using a test sequence - calls all methods does all functions.
+ * This allows us to just have one init object in main() at a time. One for test, another for true run.
  * 
 */
 
-public class StartUp {
+public class TestRun {
 
 	private final String WELCOME_MSG = "Welcome to GREGSNOTES V0.0.6";
 	private int note_count;
@@ -19,7 +19,7 @@ public class StartUp {
 	private Scanner data_in = new Scanner(System.in);
 
 
-	public StartUp() throws IOException {
+	public TestRun() throws IOException {
 		out.println(WELCOME_MSG);
 
 		loadFileData();

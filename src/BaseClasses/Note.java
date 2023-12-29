@@ -11,22 +11,24 @@ public class Note {
     private String note_name;
     private NoteType type;
     private String note_body;
+    private int index;
 
 
 
 
-    public Note(String name, NoteType note_type, String body)
+    public Note(String name, NoteType note_type, String body, int idx)
     {
         note_name = name;
         type = note_type;
         note_body = body;
+        index = idx;
     }
 
     // no args makes a note with no name, default type short note
     public Note()
     {
         // once you have the primary constructor (with args) you can call this() on all others
-        this("", NoteType.SHORT, "empty for now");
+        this("", NoteType.SHORT, "empty for now", 0);
     }
 
     // setters
@@ -51,6 +53,7 @@ public class Note {
     public String getName(){return note_name;}
     public String getType(){return type.toString();}
     public String getBody(){return note_body;}
+    public int get_index(){return index;}
 
 
 }
