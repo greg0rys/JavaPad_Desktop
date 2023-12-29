@@ -40,7 +40,7 @@ public class Test_Run {
 
 		// use do while loop so it will always loop the menu at least once
 		do {
-			out.print("src.Main Menu\n\t1. Open Note\n\t2. Make Note\n");
+			out.print("src.Main Menu\n\t1. Open GroovyPad.Note\n\t2. Make GroovyPad.Note\n");
 			out.print("Enter Choice: ");
 			choice = data_in.nextInt();
 

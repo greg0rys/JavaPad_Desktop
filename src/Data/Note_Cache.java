@@ -5,7 +5,7 @@ import src.BaseClasses.Note;
 import java.util.HashMap;
 
 /**
- * Container for Note objects. Includes methods to manage the data struct
+ * Container for GroovyPad.Note objects. Includes methods to manage the data struct
  */
 public class Note_Cache {
     private HashMap<Integer, Note> note_map; // store the notes in Key => Value sequence
@@ -47,7 +47,7 @@ public class Note_Cache {
 
     /**
      * Add a note to the HashMap
-     * @param note  the Note object that we wish to add to the map.
+     * @param note  the GroovyPad.Note object that we wish to add to the map.
      *
      * use next_index++ to increment the index value each time we add a new note
      */

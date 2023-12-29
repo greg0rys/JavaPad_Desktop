@@ -1,0 +1,16 @@
+package GroovyPad
+
+import src.Constants.Note_Type
+
+import java.time.LocalDate
+
+class Note
+{
+    private String subject
+    private var CD = LocalDate.now()
+    private var date_string = "$CD.monthValue $CD.dayOfMonth $CD.year"
+    private var index;
+
+
+
+}

@@ -2,7 +2,7 @@
 //  methods of the class in a give string should we worry about creatinga  new class it
 //  just slows this down.
 /**
- * base class for all Note Objects. This will spawn the need for subclasses
+ * base class for all GroovyPad.Note Objects. This will spawn the need for subclasses
  */
 package src.BaseClasses;
 
@@ -52,7 +52,7 @@ public class Note {
 
     /**
      * Set the name of this note
-     * @param name a String representing the name of the Note
+     * @param name a String representing the name of the GroovyPad.Note
      */
     public void setName(String name){note_name = name;}
 
@@ -66,7 +66,7 @@ public class Note {
      * @param T a String that only accepts the values<br>
      *          + long - general note with a long body<br/>
      *          + short - general note with a short body (140 chars or less)<br/>
-     *          + article - Note with long body of text + other frills<br/>
+     *          + article - GroovyPad.Note with long body of text + other frills<br/>
      *          + memo - a note with intent to be distro <br/>
      *          + todo - something that must be done, not < 100 chars<br/>
      *          + reminder - reminder with Date objects<br/>
