@@ -1,6 +1,6 @@
-package src.helpers;
+package src.Helpers;
 
-import src.Data.NoteCache;
+import src.Data.Note_Cache;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ import static java.lang.System.out;
 
 public class Driver {
     private boolean run; // run app Y / N
-    private NoteCache cache; // data struct holding all notes
+    private Note_Cache cache; // data struct holding all notes
     private Scanner IO = new Scanner(System.in); // user input object.
 
 
@@ -19,7 +19,7 @@ public class Driver {
 
     private void init(){
         run = true;
-        cache = new NoteCache();
+        cache = new Note_Cache();
         intro();
     }
 

@@ -19,7 +19,7 @@ package src;
 /* imports */
 
 import src.BaseClasses.Note;
-import src.Data.NoteCache;
+import src.Data.Note_Cache;
 
 import java.io.IOException;
 
@@ -29,7 +29,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		Note test_note = new Note();
-		NoteCache cache = new NoteCache();
+		Note_Cache cache = new Note_Cache();
 		cache.add_note(test_note);
 		cache.add_note(new Note());
 
@@ -41,4 +41,5 @@ public class Main {
 		out.printf("%s  %.2f",note_body.reverse(), 35.66);
 
 	}
+
 }

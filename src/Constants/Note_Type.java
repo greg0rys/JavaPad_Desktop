@@ -1,6 +1,6 @@
 package src.Constants;
 
-public enum NoteType {
+public enum Note_Type {
     LONG,
     SHORT,
     ARTICLE,

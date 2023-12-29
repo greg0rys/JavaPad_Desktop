@@ -1,8 +1,9 @@
-package src.helpers;
-import static java.lang.System.out;
+package src.Helpers;
 
 import java.io.IOException;
 import java.util.Scanner;
+
+import static java.lang.System.out;
 
 /**
  * Runs the program using a test sequence - calls all methods does all functions.
@@ -10,16 +11,16 @@ import java.util.Scanner;
  * 
 */
 
-public class TestRun {
+public class Test_Run {
 
 	private final String WELCOME_MSG = "Welcome to GREGSNOTES V0.0.6";
 	private int note_count;
 	private String user_name;
-	private FileHandler file = new FileHandler(); // handle file setup before constructor is called
+	private File_Handler file = new File_Handler(); // handle file setup before constructor is called
 	private Scanner data_in = new Scanner(System.in);
 
 
-	public TestRun() throws IOException {
+	public Test_Run() throws IOException {
 		out.println(WELCOME_MSG);
 
 		loadFileData();
@@ -43,7 +44,7 @@ public class TestRun {
 			out.print("Enter Choice: ");
 			choice = data_in.nextInt();
 
-			if(InputValidator.getValidity()){
+			if( Input_Validator.getValidity()){
 				switch(choice)
 				{
 					case 0:
@@ -55,7 +56,7 @@ public class TestRun {
 						break;
 				}
 
-				InputValidator.setValid(true);
+				Input_Validator.setValid(true);
 			}
 			else {
 				out.println("try again");

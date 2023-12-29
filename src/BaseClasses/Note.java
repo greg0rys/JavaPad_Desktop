@@ -1,11 +1,13 @@
-
+// TODO figure out if StringBuilder is the best choice all the time, if we aren't using
+//  methods of the class in a give string should we worry about creatinga  new class it
+//  just slows this down.
 /**
  * base class for all Note Objects. This will spawn the need for subclasses
  */
 package src.BaseClasses;
 
 import org.jetbrains.annotations.NotNull;
-import src.Constants.NoteType;
+import src.Constants.Note_Type;
 
 import java.util.Objects;
 import java.util.Random;
@@ -13,19 +15,19 @@ import java.util.Random;
 public class Note {
 
     private String note_name;
-    private NoteType type;
+    private Note_Type type;
     private String note_body;
     private int index;
 
     /**
      * Default constructor
      * @param name name of the note
-     * @param note_type note type *SEE: ..\constants\NoteType*
+     * @param note_type note type *SEE: ..\constants\Note_Type*
      * @param body blob of text representing the body
      * @param idx the unique index number of this note
      *
      */
-    public Note(String name, NoteType note_type, String body, int idx)
+    public Note( String name, Note_Type note_type, String body, int idx)
     {
         note_name = name;
         type = note_type;
@@ -42,7 +44,7 @@ public class Note {
     public Note()
     {
         // once you have the primary constructor (with args) you can call this() on all others
-        this("", NoteType.SHORT, "empty for now",0);
+        this("", Note_Type.SHORT, "empty for now",0);
         index = generate_random_index();
     }
 
@@ -59,7 +61,7 @@ public class Note {
      * should be.
      * User input will be compared against the acceptable values ignoring the case on
      * the String i.e lOnG, long, and LONG will all = true when compared to LONG.
-     * The string will then be mapped to it's proper enum type in the NoteType enum
+     * The string will then be mapped to it's proper enum type in the Note_Type enum
      *
      * @param T a String that only accepts the values<br>
      *          + long - general note with a long body<br/>
@@ -73,17 +75,17 @@ public class Note {
      */
     public void setType(@NotNull String T){
         if(T.equalsIgnoreCase("LONG"))
-            type = NoteType.LONG;
+            type = Note_Type.LONG;
         if(T.equalsIgnoreCase("SHORT"))
-            type = NoteType.SHORT;
+            type = Note_Type.SHORT;
         if(T.equalsIgnoreCase("ARTICLE"))
-            type = NoteType.ARTICLE;
+            type = Note_Type.ARTICLE;
         if(T.equalsIgnoreCase("MEMO"))
-            type = NoteType.MEMO;
+            type = Note_Type.MEMO;
         if(T.equalsIgnoreCase("TODO"))
-            type = NoteType.TODO;
+            type = Note_Type.TODO;
         if(T.equalsIgnoreCase("REMINDER"))
-            type = NoteType.REMINDER;
+            type = Note_Type.REMINDER;
     }
 
     /**

@@ -1,9 +1,9 @@
-package src.helpers;
+package src.Helpers;
 
-public class InputValidator {
+public class Input_Validator {
     private static boolean is_valid = false;
 
-    public InputValidator(){}
+    public Input_Validator(){}
 
     public static boolean getValidity(){
         return is_valid;

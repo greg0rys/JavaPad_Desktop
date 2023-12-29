@@ -1,11 +1,13 @@
-package src.helpers;
+package src.Helpers;
+
 import java.io.File;
-import java.io.IOException;
 import java.io.FileWriter;
-import static java.lang.System.out;
+import java.io.IOException;
 import java.util.Scanner;
 
-public class FileHandler {
+import static java.lang.System.out;
+
+public class File_Handler {
     private boolean file_found = findFile();
     private static final String FILE_PATH = "./user_info.txt";
     private static File working_file = new File(FILE_PATH);
@@ -14,7 +16,7 @@ public class FileHandler {
 
 
     //nor args constructor
-    public FileHandler() throws IOException {
+    public File_Handler() throws IOException {
 
         if(!file_found)
             writer = new FileWriter(FILE_PATH);

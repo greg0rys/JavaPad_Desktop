@@ -1,20 +1,19 @@
 package src.Data;
-import src.BaseClasses.Note;
-import java.util.HashMap;
-import java.util.Iterator;
 
-import static java.lang.System.out;
+import src.BaseClasses.Note;
+
+import java.util.HashMap;
 
 /**
  * Container for Note objects. Includes methods to manage the data struct
  */
-public class NoteCache {
+public class Note_Cache {
     private HashMap<Integer, Note> note_map; // store the notes in Key => Value sequence
     private int note_count;
     private int next_index;
 
 
-    public NoteCache(HashMap<Integer, Note> note_struct, int num_notes, int next_idx)
+    public Note_Cache( HashMap<Integer, Note> note_struct, int num_notes, int next_idx)
     {
         note_map = note_struct;
         note_count = num_notes;
@@ -22,13 +21,13 @@ public class NoteCache {
 
     }
 
-    public NoteCache(int num_notes)
+    public Note_Cache( int num_notes)
     {
         this(new HashMap<>(), num_notes, 0);
 
     }
 
-    public NoteCache()
+    public Note_Cache()
     {
         this(new HashMap<>(), 0,0);
     }
