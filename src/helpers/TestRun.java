@@ -35,7 +35,7 @@ public class TestRun {
 	private void menu()
 	{
 		boolean run = true;
-		int choice = 0;
+		int choice;
 
 		// use do while loop so it will always loop the menu at least once
 		do {

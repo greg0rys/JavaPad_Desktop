@@ -7,6 +7,6 @@ public class ToDo extends Note {
 
     public ToDo()
     {
-        super("", NoteType.TODO,"");
+        super("", NoteType.TODO,"",0);
     }
 }

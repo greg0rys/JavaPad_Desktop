@@ -1,9 +1,9 @@
 package src.Data;
-
-import com.sun.source.tree.BinaryTree;
 import src.BaseClasses.Note;
-
 import java.util.HashMap;
+import java.util.Iterator;
+
+import static java.lang.System.out;
 
 /**
  * Container for Note objects. Includes methods to manage the data struct
@@ -24,13 +24,13 @@ public class NoteCache {
 
     public NoteCache(int num_notes)
     {
-        this(null, num_notes, 0);
+        this(new HashMap<>(), num_notes, 0);
 
     }
 
     public NoteCache()
     {
-        this(null, 0,0);
+        this(new HashMap<>(), 0,0);
     }
 
     public boolean has_key(int idx)
@@ -43,7 +43,7 @@ public class NoteCache {
         if(has_key(idx))
             return note_map.get(idx);
 
-        return null;
+        return null; // caller will need to test for null before continuing.
     }
 
     /**
@@ -55,6 +55,40 @@ public class NoteCache {
     public void add_note(Note note)
     {
         note_map.put(next_index++, note); // get index will get the index number from the note obj; We should assign this based on our data source. IE same index as DB record
+        note_count++;
     }
 
+    public int get_count(){return note_count;}
+
+    // we need a delete method for more than one type of delete. IF we don't know the idx what other things
+    // can be used to search and delete?
+    public boolean delete_by_index(int idx)
+    {
+        // this if statement and the catch statement do the same thing remove one.
+        if(!note_map.containsKey(idx) || note_map.get(idx) == null)
+            return false;
+
+        // make sure to delete without error then return true
+        try{
+            note_map.remove(idx);
+            return true;
+        }
+        catch(Exception ex) // this does the same as the if statement implicitly
+        {
+            // if anything goes wrong at all return false to caller.
+            return false;
+        }
+    }
+
+
+    // we need to be able to print the entire collection
+    public void print()
+    {
+        // make sure our map isn't empty before doing work to print it
+        if(note_map.isEmpty())
+            return;
+
+
+
+    }
 }

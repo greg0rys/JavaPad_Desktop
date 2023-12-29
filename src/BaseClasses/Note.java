@@ -6,6 +6,8 @@ package src.BaseClasses;
 import src.Constants.NoteType;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Random;
+
 public class Note {
 
     private String note_name;
@@ -24,11 +26,12 @@ public class Note {
         index = idx;
     }
 
-    // no args makes a note with no name, default type short note
+    // no args makes a note with no name, default type short note, also adds a random index to the note
     public Note()
     {
         // once you have the primary constructor (with args) you can call this() on all others
-        this("", NoteType.SHORT, "empty for now", 0);
+        this("", NoteType.SHORT, "empty for now",0);
+        index = generate_random_index();
     }
 
     // setters
@@ -54,6 +57,23 @@ public class Note {
     public String getType(){return type.toString();}
     public String getBody(){return note_body;}
     public int get_index(){return index;}
+
+
+    /**
+     * Generate a random index number for the note, so we have a value to use as the key when a dynamic index cannot be generated
+     *
+     * @return index the randomly generated index number
+     *
+     * TODO the bound of 2500 cannot be hard coded it will need to be dynamic. It will create duplicate indexs stored in the db
+     * TODO we will need to do some math to always ensure we are creating unique indexs.
+     */
+    public int generate_random_index()
+    {
+        // this returns a random int and assigns it to index.
+        index = new Random().nextInt(5,2500);
+
+        return index;
+    }
 
 
 }
