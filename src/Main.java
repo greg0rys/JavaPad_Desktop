@@ -38,7 +38,10 @@ public class Main {
 		StringBuilder note_body = new StringBuilder("test note");
 		// reverse it once and print it, then put it back and print it.
 		// %.2f print float with only two nums after dec point.
-		out.printf("%s  %.2f",note_body.reverse(), 35.66);
+		out.printf("%s  %.2f\n",note_body.reverse(), 35.66);
+		out.printf("%s\n", note_body.reverse());
+		test_note.setName("A random test");
+		test_note.display_note();
 
 	}
 
