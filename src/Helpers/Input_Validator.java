@@ -13,4 +13,9 @@ public class Input_Validator {
     {
         is_valid = f;
     }
+
+    public static boolean is_valid_type(String T)
+    {
+        return false;
+    }
 }
