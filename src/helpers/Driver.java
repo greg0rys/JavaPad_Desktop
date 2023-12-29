@@ -1,27 +1,34 @@
 package src.helpers;
+
+import src.Data.NoteCache;
+
 import java.util.Scanner;
 
 import static java.lang.System.out;
 
 public class Driver {
-    private boolean run;
-    private Scanner IO = new Scanner(System.in);
+    private boolean run; // run app Y / N
+    private NoteCache cache; // data struct holding all notes
+    private Scanner IO = new Scanner(System.in); // user input object.
 
 
-    public Driver(){run = true;}
+    public Driver(){
+        run = true;
+        init();
+    }
 
     private void init(){
         run = true;
+        cache = new NoteCache();
         intro();
     }
 
     private void intro()
     {
         out.println("JavaPad: Your thoughts captured.\n\t v 1.0.0");
+        out.println();
 
-
-
-
+        start();
 
     }
     public void start()

@@ -1,8 +1,25 @@
+/*
+
+Standards:
+Strings will be created using the StringBuilder class and never as just String objects
+All methods will have detailed JavaDoc comments that describes the method
+Proper @Annotations will be used where needed
+  REQUIRED on params that cannot be null @NotNull
+
+Unless you are printing a Strings value as is you must use the printf() function to
+format all printed output.
+
+
+
+
+*/
+
 package src;
+
+/* imports */
 
 import src.BaseClasses.Note;
 import src.Data.NoteCache;
-import src.helpers.TestRun;
 
 import java.io.IOException;
 
@@ -18,6 +35,10 @@ public class Main {
 
 		out.println(cache.get_count());
 
+		StringBuilder note_body = new StringBuilder("test note");
+		// reverse it once and print it, then put it back and print it.
+		// %.2f print float with only two nums after dec point.
+		out.printf("%s  %.2f",note_body.reverse(), 35.66);
 
 	}
 }
