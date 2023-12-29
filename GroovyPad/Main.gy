@@ -4,12 +4,28 @@ import src.Constants.Note_Type
 
 import java.time.LocalDate
 
-class Note
+class Note_Obj
 {
     private String subject
     private var CD = LocalDate.now()
-    private var date_string = "$CD.monthValue $CD.dayOfMonth $CD.year"
+    private var date_string = "$CD.monthValue $CD.dayOfMonth $CD.year"  // get the current date as a string
     private var index;
+
+
+    Note_Obj(String sub, int idx)
+    {
+        // if we get an index of zero or less generate a random index
+        if(idx <= 0)
+            index = generate_random_index();
+        subject = sub;
+    }
+
+    static def generate_random_index()
+    {
+        return new Random().nextInt(0,2500)
+    }
+
+
 
 
 

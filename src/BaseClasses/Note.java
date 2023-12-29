@@ -1,23 +1,33 @@
-// TODO figure out if StringBuilder is the best choice all the time, if we aren't using
-//  methods of the class in a give string should we worry about creatinga  new class it
-//  just slows this down.
-/**
- * base class for all GroovyPad.Note Objects. This will spawn the need for subclasses
- */
+
 package src.BaseClasses;
 
-import org.jetbrains.annotations.NotNull;
+
 import src.Constants.Note_Type;
 
+import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Random;
+import java.util.Set;
 
+
+
+/**
+ * CHANGELOG
+ * @author Greg S
+ * {@code @github} greg0rys
+ */
 public class Note {
 
     private String note_name;
     private Note_Type type;
-    private String note_body;
+    private StringBuilder note_body;
     private int index;
+
+    private String date_string = " " + LocalDate.now().getDayOfMonth() + " " +
+                              LocalDate.now().getMonthValue() + " " +
+                              LocalDate.now().getYear(); // cast values to string value
+    private HashSet<Integer> idx_used = new HashSet<>();
 
     /**
      * Default constructor
@@ -31,13 +41,13 @@ public class Note {
     {
         note_name = name;
         type = note_type;
-        note_body = body;
-        index = idx;
+        note_body = new StringBuilder(body);
+        index = validate_index(idx);
+        idx_used.add(index);
     }
 
     /**
-     * No argument constructor - all fields will be initalized to some default value.
-     *
+     * No argument constructor - all fields will be initialized to some default value.
      * using this() as the way to set up the object it enforces that I will never have a
      * null field as all params must be filled
      */
@@ -60,20 +70,21 @@ public class Note {
      * Set this Notes type by passing in a string that denotes what this notes type
      * should be.
      * User input will be compared against the acceptable values ignoring the case on
-     * the String i.e lOnG, long, and LONG will all = true when compared to LONG.
-     * The string will then be mapped to it's proper enum type in the Note_Type enum
+     * the String i.e. lOnG, long, and LONG will all = true when compared to LONG.
+     * The string will then be mapped to its proper enum type in the Note_Type enum
      *
-     * @param T a String that only accepts the values<br>
+     * @param T a String that only accepts the values:<br>
      *          + long - general note with a long body<br/>
      *          + short - general note with a short body (140 chars or less)<br/>
      *          + article - GroovyPad.Note with long body of text + other frills<br/>
      *          + memo - a note with intent to be distro <br/>
      *          + todo - something that must be done, not < 100 chars<br/>
      *          + reminder - reminder with Date objects<br/>
+     * TODO make a validation method to ensure the user passes in one of the valid options long, short, article, etc.
      *
      *
      */
-    public void setType(@NotNull String T){
+    public void setType(String T){
         if(T.equalsIgnoreCase("LONG"))
             type = Note_Type.LONG;
         if(T.equalsIgnoreCase("SHORT"))
@@ -92,7 +103,7 @@ public class Note {
      * Set the Notes body text
      * @param bod a String that contains the body of text for this note
      */
-    public void setBody(String bod){note_body = bod;}
+    public void setBody(String bod){note_body = new StringBuilder(bod);}
 
     //getters
 
@@ -102,8 +113,9 @@ public class Note {
      */
     public String getName(){return note_name;}
     public String getType(){return type.toString();}
-    public String getBody(){return note_body;}
+    public StringBuilder getBody(){return note_body;}
     public int get_index(){return index;}
+    public String get_date_string(){return date_string;}
 
 
     /**
@@ -117,10 +129,23 @@ public class Note {
      */
     public int generate_random_index()
     {
+
         // this returns a random int and assigns it to index.
         index = new Random().nextInt(5,2500);
 
         return index;
+    }
+
+    /**
+     * if the index is already in the set recurse this method by having a random index passed as input
+     * else return the index value submitted for validation
+     * @param idx an int representing this notes index number
+     * @return a unique index number
+     */
+    private int validate_index(int idx)
+    {
+        // if contained recurse with a random index, else use this index.
+        return idx_used.contains(idx) ? validate_index(generate_random_index()) : idx;
     }
 
     @Override
@@ -135,4 +160,6 @@ public class Note {
     public int hashCode() {
         return Objects.hash(note_name, type, note_body, index);
     }
+
+
 }
