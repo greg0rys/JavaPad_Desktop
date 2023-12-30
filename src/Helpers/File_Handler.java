@@ -1,8 +1,11 @@
 package src.Helpers;
 
+import src.BaseClasses.Note;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static java.lang.System.out;
@@ -10,9 +13,9 @@ import static java.lang.System.out;
 public class File_Handler {
     private boolean file_found = findFile();
     private static final String FILE_PATH = "./user_info.txt";
-    private static File working_file = new File(FILE_PATH);
+    private static final File working_file = new File(FILE_PATH);
     private static FileWriter writer;
-    private static Scanner data_in = new Scanner(System.in);
+    private static final Scanner data_in = new Scanner(System.in);
 
 
     //nor args constructor
@@ -79,5 +82,13 @@ public class File_Handler {
         out.print("Enter total notes in path: ");
         writer.append(data_in.nextLine()).append(" ");
         writer.close();
+
+    }
+
+
+    public ArrayList<Note> load_file()
+    {
+        ArrayList<Note> notes = new ArrayList<>();
+
     }
 }

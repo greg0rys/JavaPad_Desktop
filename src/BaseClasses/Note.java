@@ -2,6 +2,7 @@ package src.BaseClasses;
 
 
 import src.Constants.Note_Type;
+import src.Helpers.Input_Validator;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -29,7 +30,6 @@ public class Note {
     private StringBuilder note_body;
     private int index;
     private HashSet<Integer> idx_used = new HashSet<>();
-    private boolean printable = true;
 
     /**
      * Default constructor
@@ -54,9 +54,18 @@ public class Note {
      */
     public Note() {
         // once you have the primary constructor (with args) you can call this() on all others
-        this("", Note_Type.SHORT, "empty for now", 0);
+        this("", Note_Type.SHORT, "", 0);
         index = validate_index(generate_random_index()); // ensure we don't reuse an
         // index value
+    }
+
+
+    public Note(Note copy)
+    {
+        // make deep copies by calling new on each assignment
+        note_name = copy.getName();
+        note_body = new StringBuilder(copy.getBody());
+
     }
 
     /**
@@ -99,6 +108,10 @@ public class Note {
      *               valid options long, short, article, etc.
      */
     public void setType(String T) {
+
+        if(Input_Validator.is_valid_type(T)){
+
+        }
         if (T.equalsIgnoreCase("LONG"))
             type = Note_Type.LONG;
         if (T.equalsIgnoreCase("SHORT"))
@@ -170,10 +183,6 @@ public class Note {
      */
     public void display_note()
     {
-        // protect against printing nulls
-        if(!printable)
-            return;
-
         out.printf("Subject: %s\nIndex: %d\nCreated: %s",
                    note_name, index, date_string);
     }

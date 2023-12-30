@@ -9,7 +9,7 @@ import static java.lang.System.out;
 public class Driver {
     private boolean run; // run app Y / N
     private Note_Cache cache; // data struct holding all notes
-    private Scanner IO = new Scanner(System.in); // user input object.
+    private final Scanner IO = new Scanner(System.in); // user input object.
 
 
     public Driver(){
@@ -46,7 +46,7 @@ public class Driver {
 
     /**
      * Creates the menu output for the program.
-     * @return void
+     *
      */
     private void display_menu()
     {

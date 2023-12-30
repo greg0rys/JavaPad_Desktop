@@ -27,19 +27,13 @@ import static java.lang.System.out;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		Note test_note = new Note();
 		Note_Cache cache = new Note_Cache();
 		cache.add_note(test_note);
 		cache.add_note(new Note());
 
 		out.println(cache.get_count());
-
-		StringBuilder note_body = new StringBuilder("test note");
-		// reverse it once and print it, then put it back and print it.
-		// %.2f print float with only two nums after dec point.
-		out.printf("%s  %.2f\n",note_body.reverse(), 35.66);
-		out.printf("%s\n", note_body.reverse());
 		test_note.setName("A random test");
 		test_note.display_note();
 

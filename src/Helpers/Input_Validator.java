@@ -1,5 +1,9 @@
 package src.Helpers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Input_Validator {
     private static boolean is_valid = false;
 
@@ -16,6 +20,11 @@ public class Input_Validator {
 
     public static boolean is_valid_type(String T)
     {
-        return false;
+        ArrayList<String> types = new ArrayList<>(
+                Arrays.asList("long", "short","article",
+                         "memo","todo", "reminder"));
+
+        return types.contains(T.toLowerCase());
+
     }
 }
