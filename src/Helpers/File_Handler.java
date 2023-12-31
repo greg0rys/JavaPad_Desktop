@@ -89,6 +89,7 @@ public class File_Handler {
     public ArrayList<Note> load_file()
     {
         ArrayList<Note> notes = new ArrayList<>();
+        return new ArrayList<>();
 
     }
 }
